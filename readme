@@ -1,0 +1,5 @@
+This is meant to be a series of projects meant to dissect PSK and
+eventually come to understand its implementation at lower and lower
+levels. 
+
+CPSK is the highest level. It is currently written only in Octave.

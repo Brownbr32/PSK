@@ -1,0 +1,25 @@
+Currently written only in Octave.
+
+the following global variables are found in ./csv/globals:
+frequency (f)
+samples/cycle (nyquistSamples)
+
+Transmitter.m
+The Transmitter.m is currently only capable of reading integers between 0 and 3
+in the data.csv and translating the data into a transmitable signal in signal.csv, 
+using encode.m to encode the numbers in a CPSK. There is no error checking or 
+handling, however, so the input must be verified by the user.
+
+Receiver.m
+The Receiver.m receives signal.csv file as its input, uses decodePeriod.m to decode
+one period of the signal into its corresponding data value.
+
+encode.m
+is used by Transmitter.m.
+
+decodePeriod.m
+is used by Receiver.m
+
+png/
+holds graphs that may or may not seem interesting.
+
