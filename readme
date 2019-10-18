@@ -3,3 +3,4 @@ eventually come to understand its implementation at lower and lower
 levels. 
 
 CPSK is the highest level. It is currently written only in Octave.
+DPSK is one step lower, and is currently in progress in C++.

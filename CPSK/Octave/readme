@@ -23,3 +23,15 @@ is used by Receiver.m
 png/
 holds graphs that may or may not seem interesting.
 
+
+
+Intro to Cohesive Phase-Shift Keying (CPSK)
+
+There is a commonly-known sine wave being transmitted, and there is also a data-
+embedded sine wave being transmitted. The data-embedded wave's phase is compared to the
+commonl-known sine wave, and the difference in phase shift between the two is keyed to
+specific associated values (0-3). Thus the base phase shift is cohesive in that it is
+compared to the same sine wave throughout the entire transmission. The perpetuation
+of errors is less common here than in its counterpart, due to the fact that the current
+phase shift value is only dependent upon current information.
+

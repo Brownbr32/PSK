@@ -17,13 +17,25 @@ t = 0:1/(f*nyquistSamp):signalPeriod;
 n = 0:nyquistSamp*len-1;
 
 unmodifiedSignal = cos(2*pi*f*t);
-%dataSignal = cos(2*pi*f*t + 2*pi*modifiedData/4);
 dataSignal = encode(f,t,modifiedData);
 tmp = acos(dataSignal)/(2*pi);
-disp(dataSignal)
-csvwrite('./csv/signal.csv',dataSignal);
+csvwrite('../csv/signal.csv',dataSignal);
+
+audiowrite("./unmodified.wav",unmodifiedSignal,f*nyquistSamp);
+audiowrite("./data.wav",dataSignal,f*nyquistSamp);
 
 subplot(2,1,1); stem(n,unmodifiedSignal); title("Unmodified Signal (n)");
 subplot(2,1,2); stem(n,dataSignal); title("Data Signal (n)");
-print -dpng "./graphs/signal.png"
+print -dpng "../graphs/signalStem.png"
+
+subplot(2,1,1); plot(n,unmodifiedSignal); title("Unmodified Signal (n)");
+subplot(2,1,2); plot(n,dataSignal); title("Data Signal (n)");
+print -dpng "../graphs/signalPlot.png"
+
+[dataFrequencies, frequencies] = fft(dataSignal);
+unmodifiedFrequency = fft(unmodifiedSignal);
+
+subplot(2,1,1); plot(unmodifiedFrequency); title("Unmodified Signal (frequency)");
+subplot(2,1,2); plot(dataFrequencies); title("Data Signal (frequency)");
+print -dpng "../graphs/frequencySpectrum.png"
 

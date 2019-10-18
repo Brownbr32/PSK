@@ -8,5 +8,6 @@ function data = decodePeriod(period, nyquistSamp)
     one = round(sum(abs(one - period)));
     two = round(sum(abs(two - period)));
     three = round(sum(abs(three - period)));
-    data = ~one+2*~two+3*~three;
+    data = ~one+2*~two+3*~three; % future suggestion:
+                    % compare and return index of lowest value
 end
