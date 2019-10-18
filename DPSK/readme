@@ -1,0 +1,16 @@
+Currently in progress only in C++.
+
+see readme in cpp for information on the C++ implementation.
+
+
+
+Intro to Differential Phase-Shift Keying (DPSK)
+
+There is only one wave being transmitted, and only one wave to pay attention to: the
+data-embedded wave. The phase shift of the current data-embedded wave's period is
+compared to the previous period, and the difference in phase shift between the two is 
+keyed to specific associated values (0-3). Thus the base phase shift is differential in
+that the current phase shift value is the difference between that in the current period
+and that in the previous period. Perpetuation of errors is more common here, because an
+error in detecting one period is more likely to affect an error in detecting the 
+following period; the recursive nature of the keying may lead to recursive errors.

@@ -9,7 +9,9 @@ using namespace std;
 
 int main(int argc, char* argv[])
  {
-    data2ps signal(argv[1]);
+    string fileName = "./txt/data.txt"; 
+    /*if(argc == 2)   data2ps signal(argv[1]);
+    else*/ data2ps signal(fileName);
     ps2data data;
     char tmp,t;
     data.printData();

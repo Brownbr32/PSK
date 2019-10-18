@@ -13,6 +13,7 @@ class data2ps {
         char nextBits();
         data2ps();
         data2ps(char*);
+        data2ps(string);
 
 };
 
@@ -30,6 +31,20 @@ data2ps::data2ps()
 
 
 data2ps::data2ps(char* fileName) 
+ {
+    ifstream dataFile(fileName);
+    
+    for(int i = 0; i<DATA_SIZE; i++)
+        datArr[i] =0;
+    for(int i = 0; i<DATA_SIZE; i++)
+    {
+        if(!dataFile.get(datArr[i]))
+            break;
+    }
+    bitIndex = 0;
+ }
+
+data2ps::data2ps(string fileName) 
  {
     ifstream dataFile(fileName);
     
