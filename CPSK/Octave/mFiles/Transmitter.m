@@ -16,6 +16,12 @@ modifiedData = repelems(data,r);
 t = 0:1/(f*nyquistSamp):signalPeriod;
 n = 0:nyquistSamp*len-1;
 
+
+
+
+
+
+
 unmodifiedSignal = cos(2*pi*f*t);
 dataSignal = encode(f,t,modifiedData);
 tmp = acos(dataSignal)/(2*pi);
