@@ -1,34 +1,30 @@
 #include "./transmitter.h"
 
-
-
 int main(int argc, char* argv[])
  {
     // gets the data from the followin file
-    string fileName = "./txt/data.txt"; 
+    string fileName = "../txt/data.txt"; 
     char datArr[DATA_SIZE];
     clearArr(datArr);
     getData(datArr, fileName);
 
     // outputs data to screen.
+    cout << "transmitting the following data:\n";
     cout << datArr << endl;
 
     // makes array of the phase-shift values
     char psArr[PS_SIZE];
     clearArr(psArr,PS_SIZE);
-    getdps(datArr, psArr);
+    dat2dps(datArr, psArr);
 
     // makes array of sine values for phase shift.
     double sigArr[SIGNAL_SIZE];
     clearArr((char*)sigArr,8*SIGNAL_SIZE);
-    getSig(psArr,sigArr);
+    dps2sig(psArr,sigArr);
 
     // outputs sine values to .wav file.
     sig2Wav(sigArr);
-
-
  }
-
 
 
 
@@ -46,19 +42,19 @@ void getData(char arr[DATA_SIZE], string fileName)
             break;
 }
 
-void getdps(char data[DATA_SIZE], char ps[PS_SIZE])
+void dat2dps(char data[DATA_SIZE], char ps[PS_SIZE])
 {
     int i;
     // gets CPSK
     for(i = 0; i<PS_SIZE; i++)
-        ps[i] = (data[i/4]>>(2*i%4))&3;
+        ps[i] = (data[i/4]>>(2*(i % 4)))&3;
     
     // gets DPSK
     for(i = 1; i<PS_SIZE; i++)
-        ps[i] = (ps[i-1]+ps[i])%4;
+        ps[i] = (ps[i-1] + ps[i]) % 4;
 }
 
-void getSig(char ps[], double sig[])
+void dps2sig(char ps[], double sig[])
 {
     double t[SIGNAL_SIZE];
     int i;
@@ -85,7 +81,7 @@ void sig2Wav(double sig[])
     for(int i = SIGNAL_SIZE; i < SIGNAL_SIZE+3; i++)
         wav[i] = 0;
 
-    ofstream myFile ("./wav/test.wav");
+    ofstream myFile ("../wav/output.wav");
     myFile.seekp(0);
     myFile.write((char*)wav, SIGNAL_SIZE*2+50);
     myFile.close();

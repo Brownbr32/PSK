@@ -1,23 +1,15 @@
 Currently in progress in c++
 
-no integral coordination between files as of yet, however, 
-
 source:
- contains the following .cpp files and their makefiles. 
-
-    data2ps.cpp
-    is a class that takes characters, or any kind of cohesive data, and turns them into 
-    bit pairs, necessary for Quaternary Phase Shift Keying.
-
-    ps2data.cpp
-    is a class that takes a series of bit pairs and turns them back into characters, or
-    cohesive data.
-
-    main.cpp
-    currently is used to test the translation between the two. It works, by the way. ;)
+   holds the source files and executables for the c++ implementation of QDPSK 
+   (Quaternary Differential Phase-Shift Keying). Read its respective readme
+   for more detail.
 
 txt:
- used for data to transmit, etc.
+   used for data to transmit, etc.
 
-    data.txt
-    contains the data to be translated from characters to bit pairs.
+   data.txt
+   contains the data to be translated from characters to bit pairs.
+
+wav:
+   holds the .wav files to be either transmitted or decoded.

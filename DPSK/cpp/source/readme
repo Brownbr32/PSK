@@ -1,0 +1,17 @@
+Welcome to the  wonderful c++ QDPSK hub!
+
+transmitter:
+    holds the transmitter C++ files and a makefile. Outputs the transmitter binary
+    to the C++ folder (cd .. from here.)
+
+receiver:
+    holds the receiver C++ files and a makefile. Outputs the receiver binary
+    to the C++ folder (cd .. from here.)
+
+readWav.cpp:
+    I used this file to assist in the dissection of .wav files so I'd know how to 
+    write out to one. I'm pretty proud of the result, if I do say so myself. ;)
+
+standards.h
+    holds macros that are used in both transmitter and receiver; that's why it's in a
+    shared folder.
