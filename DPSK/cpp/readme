@@ -1,5 +1,8 @@
 Currently in progress in c++
 
+executables:
+   self-explanatory
+
 source:
    holds the source files and executables for the c++ implementation of QDPSK 
    (Quaternary Differential Phase-Shift Keying). Read its respective readme
